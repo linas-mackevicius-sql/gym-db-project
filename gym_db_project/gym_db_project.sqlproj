@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="2.1.0" />
+  <PropertyGroup>
+    <Name>gym_db_project</Name>
+    <ProjectGuid>{4265AE6E-F876-4BF9-BCE0-DFA0A31550A5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <EnableDefaultSqlItems>false</EnableDefaultSqlItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Include all SQL files -->
+    <Build Include="dbo\**\*.sql" />
+    <Build Remove="dbo\Tables\GymEquipment.sql" />
+    <Build Remove="dbo\Tables\GymEquipment.sql" />
+    <Build Remove="dbo\Tables\GymEquipment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="user_defined_types" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
+  </Target>
+</Project>
