@@ -14,10 +14,7 @@ CREATE TABLE gym.gyms
     CONSTRAINT UQ_gyms_company_id_address_id 
         UNIQUE (company_id, address_id)
 );
-GO
 
-CREATE NONCLUSTERED INDEX IX_gyms_company_id 
-    ON gym.gyms (company_id);
 GO
 CREATE NONCLUSTERED INDEX IX_gyms_address_id 
     ON gym.gyms (address_id);

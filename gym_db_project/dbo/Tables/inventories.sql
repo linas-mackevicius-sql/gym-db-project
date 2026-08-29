@@ -16,13 +16,11 @@ CREATE TABLE gym.inventories
       REFERENCES gym.gyms (id),
   CONSTRAINT CHK_inventories_quantity
       CHECK (quantity_total >= 0),
+  CONSTRAINT CHK_inventories_quantity_under_repair
+      CHECK (quantity_under_repair <= quantity_total),
   CONSTRAINT UQ_inventories_gym_equipment 
     UNIQUE (gym_id, equipment_item_id)
 );
-GO
-
-CREATE NONCLUSTERED INDEX IX_inventories_gym_id 
-    ON gym.inventories (gym_id);
 GO
 CREATE NONCLUSTERED INDEX IX_inventories_equipment_item_id 
     ON gym.inventories (equipment_item_id);

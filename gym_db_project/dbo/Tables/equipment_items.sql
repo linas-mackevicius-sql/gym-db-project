@@ -16,7 +16,6 @@ CREATE TABLE gym.equipment_items
         CHECK(weight_kg IS NULL OR (ROUND(weight_kg, 2, 1) = weight_kg))
 );
 GO
-
 CREATE NONCLUSTERED INDEX IX_equipment_items_manufacturer_id
 on gym.equipment_items (manufacturer_id);
 

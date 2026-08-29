@@ -12,9 +12,4 @@ CREATE TABLE gym.addresses
     CONSTRAINT UQ_addresses_city_street_house
         UNIQUE (city_id, street_name, house_number)
 );
-GO
-
-CREATE NONCLUSTERED INDEX IX_addresses_city_id 
-    ON gym.addresses (city_id);
-
     
