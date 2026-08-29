@@ -1,0 +1,10 @@
+# VS Code local workspace settings
+.vscode/
+
+# SQL Server build outputs (dacpac, cache, xml reports)
+bin/
+obj/
+
+# Visual Studio user-specific files (just in case)
+*.user
+*.suo
