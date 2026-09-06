@@ -9,12 +9,18 @@ CREATE TABLE gym.equipment_items
         PRIMARY KEY (id),
     CONSTRAINT FK_equipment_items_manufacturers
         FOREIGN KEY (manufacturer_id) 
-        REFERENCES gym.manufacturers (id),
+        REFERENCES gym.manufacturers (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
     CONSTRAINT FK_equipment_items_categories
         FOREIGN KEY (category_id)
-        REFERENCES gym.categories(id),
+        REFERENCES gym.categories(id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
     CONSTRAINT UQ_equipment_items_title_manufacturer_id
-        UNIQUE (title, manufacturer_id)
+        UNIQUE (title, manufacturer_id),
+    CONSTRAINT UQ_equipment_items_product_page_url
+        UNIQUE (product_page_url)
 );
 
 GO

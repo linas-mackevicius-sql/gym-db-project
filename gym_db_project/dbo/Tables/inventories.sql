@@ -11,9 +11,13 @@ CREATE TABLE gym.inventories
   CONSTRAINT FK_inventories_equipment_items
       FOREIGN KEY (equipment_item_id)
       REFERENCES gym.equipment_items (id),
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
   CONSTRAINT FK_inventories_gyms  
       FOREIGN KEY (gym_id)
-      REFERENCES gym.gyms (id),
+      REFERENCES gym.gyms (id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
   CONSTRAINT CHK_inventories_quantity
       CHECK (quantity_total >= 0),
   CONSTRAINT CHK_inventories_quantity_under_repair

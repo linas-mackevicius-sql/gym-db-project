@@ -6,5 +6,4 @@ CREATE TABLE gym.categories
         PRIMARY KEY (id),
     CONSTRAINT UQ_categories_title
         UNIQUE (title) 
-
 )

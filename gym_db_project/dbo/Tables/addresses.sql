@@ -8,7 +8,9 @@ CREATE TABLE gym.addresses
         PRIMARY KEY (id),
     CONSTRAINT FK_addresses_cities
         FOREIGN KEY (city_id)
-        REFERENCES gym.cities (id),
+        REFERENCES gym.cities (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
     CONSTRAINT UQ_addresses_city_street_house
         UNIQUE (city_id, street_name, house_number)
 );

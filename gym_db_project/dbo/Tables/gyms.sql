@@ -7,10 +7,14 @@ CREATE TABLE gym.gyms
         PRIMARY KEY (id),
     CONSTRAINT FK_gyms_companies
         FOREIGN KEY (company_id)
-        REFERENCES gym.companies (id),
+        REFERENCES gym.companies (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
     CONSTRAINT FK_gyms_addresses
         FOREIGN KEY (address_id)
-        REFERENCES gym.addresses (id),
+        REFERENCES gym.addresses (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
     CONSTRAINT UQ_gyms_company_id_address_id 
         UNIQUE (company_id, address_id)
 );
