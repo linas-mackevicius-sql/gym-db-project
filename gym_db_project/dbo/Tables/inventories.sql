@@ -5,6 +5,7 @@ CREATE TABLE gym.inventories
   equipment_item_id INT NOT NULL,
   quantity_total INT NOT NULL,
   quantity_under_repair INT NOT NULL DEFAULT 0,
+  is_reviewable BIT NOT NULL DEFAULT 1;
   created_at DATETIME2(3) DEFAULT SYSUTCDATETIME() NOT NULL,
   CONSTRAINT PK_inventories
       PRIMARY KEY (id),
