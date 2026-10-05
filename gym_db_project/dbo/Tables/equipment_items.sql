@@ -22,7 +22,9 @@ CREATE TABLE gym.equipment_items
     CONSTRAINT UQ_equipment_items_product_page_url
         UNIQUE (product_page_url)
 );
-
 GO
 CREATE NONCLUSTERED INDEX IX_equipment_items_manufacturer_id
 on gym.equipment_items (manufacturer_id);
+GO
+CREATE NONCLUSTERED INDEX IX_equipment_items_category_id
+on gym.equipment_items (category_id);

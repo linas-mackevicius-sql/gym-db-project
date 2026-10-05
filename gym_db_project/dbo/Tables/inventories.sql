@@ -5,15 +5,15 @@ CREATE TABLE gym.inventories
   equipment_item_id INT NOT NULL,
   quantity_total INT NOT NULL,
   quantity_under_repair INT NOT NULL DEFAULT 0,
-  is_reviewable BIT NOT NULL DEFAULT 1;
+  is_reviewable BIT NOT NULL DEFAULT 1,
   created_at DATETIME2(3) DEFAULT SYSUTCDATETIME() NOT NULL,
   CONSTRAINT PK_inventories
       PRIMARY KEY (id),
   CONSTRAINT FK_inventories_equipment_items
       FOREIGN KEY (equipment_item_id)
-      REFERENCES gym.equipment_items (id),
+      REFERENCES gym.equipment_items (id)
       ON DELETE NO ACTION
-      ON UPDATE NO ACTION
+      ON UPDATE NO ACTION,
   CONSTRAINT FK_inventories_gyms  
       FOREIGN KEY (gym_id)
       REFERENCES gym.gyms (id)
